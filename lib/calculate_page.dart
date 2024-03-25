@@ -15,14 +15,14 @@ class CalculatePage extends StatefulWidget {
 class _CalculatePageState extends State<CalculatePage> {
   int _selectedContainer = 0;
   double currentSliderValue = 100;
-  final ValueNotifier<double> counter1 = ValueNotifier<double>(5);
+  final ValueNotifier<double> counter1 = ValueNotifier<double>(20);
 
   void _incrementCounter1() {
     counter1.value++;
   }
 
   void _decrementCounter1() {
-    if (counter1.value > 5) {
+    if (counter1.value > 20) {
       counter1.value--;
     }
   }
@@ -278,7 +278,7 @@ class _CalculatePageState extends State<CalculatePage> {
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    if (counter1.value >= 10) {
+                    if (counter1.value >= 20) {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
