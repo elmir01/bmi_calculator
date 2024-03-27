@@ -1,5 +1,6 @@
 import 'dart:ffi';
 import 'dart:math';
+import 'package:bmi_calculator/category_page.dart';
 
 import 'package:bmi_calculator/calculate_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -68,11 +69,40 @@ class _ResultPageState extends State<ResultPage> {
             padding: const EdgeInsets.all(8.0) + EdgeInsets.only(left: 20),
             child: Align(
               alignment: Alignment.centerLeft,
-              child: Text('Your result',
-                  style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600)),
+              child: Row(
+                children: [
+                  Text('Your result',
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600)),
+                  Padding(
+                    padding:
+                        const EdgeInsets.all(8.0) + EdgeInsets.only(left: 80),
+                    child: SizedBox(
+                      width: 130,
+                      height: 40,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CategoryPage()));
+                        },
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(235, 250, 12, 39)),
+                        child: Text(
+                          'Categories',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
           Padding(
